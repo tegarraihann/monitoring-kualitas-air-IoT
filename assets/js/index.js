@@ -11,9 +11,9 @@ function updateValues(temp, salinity, turbidity) {
     }
 }
 
-function closeModal() {
-    document.getElementById('alertModal').style.display = "none";
-}
+// function closeModal() {
+//     document.getElementById('alertModal').style.display = "none";
+// }
 
 function fetchData() {
     fetch('assets/php/get_data.php')
