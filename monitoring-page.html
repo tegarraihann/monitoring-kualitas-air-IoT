@@ -5,42 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IoT Monitoring Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 </head>
 <body>
-    <div class="nav-container">
-        <a href="index.html" class="nav-link">← Kembali ke Home</a>
-    </div>
-
-    <h1 class="title">IoT Monitoring Dashboard</h1>
-
-    <div class="monitoring-sensor">
-        <h2>Kondisi Akuarium</h2>
-        <div class="sensor-grid">
-            <div class="sensor">
-                <h3>Suhu</h3>
-                <p id="tempValue">--</p>
-            </div>
-            <div class="sensor">
-                <h3>Salinitas</h3>
-                <p id="salinityValue">--</p>
-            </div>
-            <div class="sensor">
-                <h3>Kekeruhan</h3>
-                <p id="turbidityValue">--</p>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-links">
+                <a href="index.html" class="navbar-link">Home</a>
+                <a href="monitoring-page.html" class="navbar-link">Data Realtime</a>
+                <a href="data-updated.html" class="navbar-link">Data Updated</a>
+                <a href="grafik-gabungan.html" class="navbar-link">Grafik Gabungan</a>
+                <a href="grafik.html" class="navbar-link">Grafik</a>
             </div>
         </div>
     </div>
 
-<!-- ini menu popup/modal peringatan -->
-    <!-- <div class="modal" id="alertModal">
-        <div class="modal-content">
-            <div class="icon">⚠</div>
-            <h2>Peringatan</h2>
-            <p id="alertMessage">Nilai abnormal terdeteksi.</p>
-            <button class="primary" onclick="closeModal()">Tutup</button>
+    <!-- Tambahkan wrapper untuk konten utama -->
+    <div class="content-wrapper">
+        <h1 class="title">IoT Monitoring Dashboard</h1>
+
+        <div class="monitoring-sensor">
+            <h2>Kondisi Akuarium</h2>
+            <div class="sensor-grid">
+                <div class="sensor">
+                    <h3>Suhu</h3>
+                    <p id="tempValue">--</p>
+                </div>
+                <div class="sensor">
+                    <h3>Salinitas</h3>
+                    <p id="salinityValue">--</p>
+                </div>
+                <div class="sensor">
+                    <h3>Kekeruhan</h3>
+                    <p id="turbidityValue">--</p>
+                </div>
+            </div>
         </div>
-    </div> -->
+    </div>
 
     <footer>
         &copy; 2024 IoT Monitoring System - WAHYU DWI CANDRA
