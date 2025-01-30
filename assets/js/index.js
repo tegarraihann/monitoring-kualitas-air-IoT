@@ -1,11 +1,11 @@
 function updateValues(temp, salinity, turbidity) {
     document.getElementById('tempValue').innerText = temp + " °C";
-    document.getElementById('salinityValue').innerText = salinity + " ppt";
-    document.getElementById('turbidityValue').innerText = turbidity + " NTU";
+    document.getElementById('salinityValue').innerText = salinity + " PPT";
+    document.getElementById('turbidityValue').innerText = turbidity + " PPM";
 
     // Tambahkan logika peringatan
     if (temp > 40 || salinity > 35 || turbidity > 100) {
-        const alertMessage = `Nilai abnormal terdeteksi: Suhu ${temp}°C, Salinitas ${salinity}ppt, Kekeruhan ${turbidity}NTU.`;
+        const alertMessage = `Nilai abnormal terdeteksi: Suhu ${temp}°C, Salinitas ${salinity}PPT, Kekeruhan ${turbidity}PPM.`;
         document.getElementById('alertMessage').innerText = alertMessage;
         document.getElementById('alertModal').style.display = "flex";
     }
