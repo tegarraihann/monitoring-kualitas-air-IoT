@@ -290,7 +290,8 @@ footer {
 .subtitle-text {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
-    color: #1b4f72;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     margin-bottom: 20px;
 }
 
@@ -481,4 +482,55 @@ table.display tbody td {
 #realtime-chart {
     height: 400px;
     margin: 0 auto;
+}
+
+/* Pastikan filter-wrapper sejajar */
+.filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    flex-wrap: nowrap;
+}
+
+/* Styling dropdown "Tampilkan Entri" */
+.entries-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.entries-container select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 30px;
+}
+
+/* Styling untuk filter */
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 32px;
+}
+
+/* Ukuran input filter agar sejajar */
+.filter-container input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 30px;
+    width: 140px;
+}
+
+/* Styling tombol filter */
+#filter-button {
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 32px;
 }

@@ -49,9 +49,10 @@ document.addEventListener("DOMContentLoaded", function () {
     chart.render();
 
     function updateChart() {
-        fetch("assets/php/get_realtime_data.php")
+        fetch("assets/backend/get_realtime_data.php")
             .then(response => response.json())
             .then(data => {
+                
                 chart.updateSeries([
                     { name: "Suhu", data: data.suhu },
                     { name: "Salinitas", data: data.salinitas },
@@ -60,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => console.error("Error fetching data:", error));
     }
-
+    
     updateChart(); // Initial load
     setInterval(updateChart, 5000); // Update every 5 seconds
 });

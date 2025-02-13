@@ -14,16 +14,38 @@
                 <a href="index.html" class="navbar-link">Home</a>
                 <a href="monitoring-page.html" class="navbar-link">Data Realtime</a>
                 <a href="data-updated.html" class="navbar-link">Data Updated</a>
-                <a href="grafik-gabungan.html" class="navbar-link">Grafik Gabungan</a>
-                <a href="#graphs" class="navbar-link">Grafik</a>
+                <a href="grafik.html" class="navbar-link">Grafik</a>
             </div>
         </div>
     </div>
 
-
     <h1 class="title">Data Updated</h1>
 
+    <!-- Filter dan Dropdown Entries -->
     <div class="table-container">
+        <div class="filter-wrapper">
+            <!-- Dropdown "Tampilkan Entri" -->
+            <div class="entries-container">
+                <label for="entries">Tampilkan</label>
+                <select id="entries">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <span>entri</span>
+            </div>
+
+            <div class="filter-container">
+                <label for="start-date">Dari:</label>
+                <input type="date" id="start-date">
+                <label for="end-date">Sampai:</label>
+                <input type="date" id="end-date">
+                <button id="filter-button">Filter</button>
+            </div>
+        </div>
+
         <table id="updatedData" class="display" style="width:100%">
             <thead>
                 <tr>

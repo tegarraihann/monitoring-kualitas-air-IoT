@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 
-$sql = "SELECT id, tanggal AS waktu, suhu, tds AS salinitas, kekeruhan FROM monitoring ORDER BY id DESC";
+$sql = "SELECT id, DATE_FORMAT(tanggal, '%Y-%m-%d') AS waktu, suhu, tds AS salinitas, kekeruhan FROM monitoring ORDER BY id DESC";
 $query = mysqli_query($db, $sql);
 
 $data = [];

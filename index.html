@@ -5,25 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - IoT Monitoring</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css"> <!-- Styling umum untuk semua halaman -->
+    <link rel="stylesheet" href="assets/css/home.css"> <!-- Styling khusus untuk halaman home -->
 </head>
 <body>
-    <div class="container">
-        <div class="profile-content">
-            <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-img">
-            <div class="text-content">
-                <h1 class="title-text">Wahyu Dwi Candra</h1>
-                <h2 class="subtitle-text">"Sistem Monitoring IoT untuk Akuarium Cerdas"</h2>
-                <p class="description">
-                    Saya adalah mahasiswa yang memiliki minat besar dalam pengembangan sistem IoT, khususnya dalam aplikasi lingkungan dan perangkat pintar.
-                    Proyek ini merupakan salah satu upaya saya untuk menciptakan solusi monitoring akuarium yang efisien dan mudah digunakan.
-                    Sistem ini memanfaatkan teknologi terkini untuk mendukung kehidupan akuarium yang optimal.
-                </p>
-                <div class="button-container">
-                    <a href="monitoring-page.html" class="button-link">Go to Monitoring</a>
-                </div>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-links">
+                <a href="index.html" class="navbar-link">Home</a>
+                <a href="monitoring-page.html" class="navbar-link">Data Realtime</a>
+                <a href="data-updated.html" class="navbar-link">Data Updated</a>
+                <a href="grafik.html" class="navbar-link">Grafik</a>
             </div>
         </div>
+    </div>
+
+
+    <!-- Hero Section -->
+    <div class="hero-container">
+        <div class="text-content animated fade-in-left">
+            <h1 class="title-text">Wahyu Dwi Candra</h1>
+            <h2 class="subtitle-text">"Sistem Monitoring IoT untuk Akuarium Cerdas"</h2>
+            <p class="description">
+                Saya adalah mahasiswa yang memiliki minat besar dalam pengembangan sistem IoT, khususnya dalam aplikasi lingkungan dan perangkat pintar.
+                Proyek ini merupakan salah satu upaya saya untuk menciptakan solusi monitoring akuarium yang efisien dan mudah digunakan.
+                Sistem ini memanfaatkan teknologi terkini untuk mendukung kehidupan akuarium yang optimal.
+            </p>
+            <div class="button-container">
+                <a href="monitoring-page.html" class="button-link">Go to Monitoring</a>
+            </div>
+        </div>
+        <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-img animated fade-in-right">
     </div>
 </body>
 </html>
