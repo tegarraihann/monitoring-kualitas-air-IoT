@@ -1,38 +1,42 @@
-function updateValues(temp, salinity, turbidity) {
-    document.getElementById('tempValue').innerText = temp + " °C";
-    document.getElementById('salinityValue').innerText = salinity + " PPT";
-    document.getElementById('turbidityValue').innerText = turbidity + " PPM";
+document.addEventListener("DOMContentLoaded", function () {
+    function updateValues(temp, salinity, turbidity) {
+        // Pastikan elemen ada sebelum mencoba mengaksesnya
+        const tempElement = document.getElementById('tempValue');
+        const salinityElement = document.getElementById('salinityValue');
+        const turbidityElement = document.getElementById('turbidityValue');
 
-    // Tambahkan logika peringatan
-    if (temp > 40 || salinity > 35 || turbidity > 100) {
-        const alertMessage = `Nilai abnormal terdeteksi: Suhu ${temp}°C, Salinitas ${salinity}PPT, Kekeruhan ${turbidity}PPM.`;
-        document.getElementById('alertMessage').innerText = alertMessage;
-        document.getElementById('alertModal').style.display = "flex";
+        if (tempElement && salinityElement && turbidityElement) {
+            tempElement.innerText = temp + " °C";
+            salinityElement.innerText = salinity + " PPT";
+            turbidityElement.innerText = turbidity + " PPM";
+        } else {
+            console.error("Salah satu elemen tidak ditemukan di DOM!");
+        }
     }
-}
 
-// function closeModal() {
-//     document.getElementById('alertModal').style.display = "none";
-// }
+    function fetchData() {
+        fetch('assets/backend/get_data.php')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Data diterima:", data); // Debugging
 
-function fetchData() {
-    fetch('assets/php/get_data.php')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.error) {
-                console.error(data.error);
-                return;
-            }
-            updateValues(data.suhu, data.tds, data.kekeruhan);
-        })
-        .catch(error => {
-            console.error("Error fetching data:", error);
-        });
-}
+                if (!data || typeof data.suhu === "undefined" || typeof data.tds === "undefined" || typeof data.kekeruhan === "undefined") {
+                    console.error("Format data tidak valid:", data);
+                    return;
+                }
 
-setInterval(fetchData, 3000);
+                updateValues(data.suhu, data.tds, data.kekeruhan);
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+            });
+    }
+
+    fetchData(); // Load data pertama kali
+    setInterval(fetchData, 3000); // Update data setiap 3 detik
+});

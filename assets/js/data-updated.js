@@ -13,6 +13,7 @@ $(document).ready(function () {
             url: "assets/i18n/id.json"
         },
         pagingType: "full_numbers",
+        pageLength: 5,
         dom: 'rtip'
     });
 
