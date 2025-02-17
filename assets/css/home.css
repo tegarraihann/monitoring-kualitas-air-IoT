@@ -111,12 +111,52 @@
     }
 }
 
-/* Responsive */
+/* --- Perbaikan Umum Responsivitas --- */
 @media screen and (max-width: 768px) {
     .hero-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
+        flex-direction: column; /* Ubah tata letak jadi vertikal */
+        text-align: center; /* Pusatkan teks */
+        gap: 1rem; /* Beri jarak lebih kecil */
+    }
+
+    .profile-img {
+        width: 150px; /* Perkecil gambar */
+        height: 150px;
+        margin-top: 10px; /* Tambahkan jarak */
+    }
+
+    .text-content {
+        max-width: 90%; /* Batasi lebar teks agar lebih nyaman */
+    }
+
+    .title-text {
+        font-size: 1.6rem; /* Kurangi ukuran font */
+    }
+
+    .subtitle-text {
+        font-size: 1.2rem; /* Perkecil sedikit */
+    }
+
+    .description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .button-container {
+        margin-top: 0.8rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* --- Tambahan Perbaikan untuk Tablet (768px - 1024px) --- */
+@media screen and (max-width: 1024px) {
+    .hero-container {
+        width: 90%;
+    }
+
+    .text-content {
+        max-width: 600px;
     }
 
     .profile-img {
