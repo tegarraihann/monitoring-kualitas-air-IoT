@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (tempElement && salinityElement && turbidityElement) {
             tempElement.innerText = temp + " °C";
-            salinityElement.innerText = salinity + " PPT";
-            turbidityElement.innerText = turbidity + " PPM";
+            salinityElement.innerText = salinity + " PPM";
+            turbidityElement.innerText = turbidity + " NTU";
         } else {
             console.error("Salah satu elemen tidak ditemukan di DOM!");
         }

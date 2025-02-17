@@ -14,6 +14,7 @@ $(document).ready(function () {
         },
         pagingType: "full_numbers",
         pageLength: 5,
+        order: [],
         dom: 'rtip'
     });
 
@@ -56,5 +57,14 @@ $(document).ready(function () {
 
     $('#filter-button').on('click', function () {
         filterByDate();
+    });
+
+    // Event Listener untuk Sorting Ascending dan Descending
+    $('#updatedData thead th').on('click', function () {
+        var columnIndex = $(this).index();
+        var currentOrder = table.order();
+        var newOrder = (currentOrder[0][1] === 'asc') ? 'desc' : 'asc';
+
+        table.order([columnIndex, newOrder]).draw();
     });
 });
